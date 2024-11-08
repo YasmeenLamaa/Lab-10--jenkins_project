@@ -10,7 +10,7 @@ pipeline {
                     if (!fileExists("${env.WORKSPACE}/${VIRTUAL_ENV}")) {
                         bat "python -m venv ${VIRTUAL_ENV}"
                     }
-                    bat "${VIRTUAL_ENV}\\Scripts\\activate && pip install-r requirements.txt"
+                    bat "${VIRTUAL_ENV}\\Scripts\\activate && pip install -r requirements.txt"
                 }
             }
         }
