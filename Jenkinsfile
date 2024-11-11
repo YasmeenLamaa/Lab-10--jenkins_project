@@ -46,6 +46,17 @@ pipeline {
             }
         }
 
+        stage('Security Scan') {
+            steps {
+                script {
+                    bat """
+                        ${VIRTUAL_ENV}\\Scripts\\activate
+                        bandit -r .
+                    """
+                }
+            }
+        }
+
         stage('Deploy') {
             steps {
                 script {
