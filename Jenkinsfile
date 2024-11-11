@@ -60,8 +60,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Deployment logic, e.g., pushting to a remote server
-                    echo "Deploying application..."
+                    bat """
+                        ${VIRTUAL_ENV}\\Scripts\\activate
+                        echo "Starting the application..."
+                        python app.py
+                    """
                 }
             }
         }
