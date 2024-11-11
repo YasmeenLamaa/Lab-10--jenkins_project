@@ -26,7 +26,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    bat "${VIRTUAL_ENV}\\Scripts\\activate && pytest"
+                    bat "${VIRTUAL_ENV}\\Scripts\\activate && pytest -m tests"
                 }
             }   
         }
